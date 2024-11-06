@@ -2,6 +2,14 @@ import streamlit as st
 import google.generativeai as genai
 from config import GEMINI_API_KEY
 import base64
+import os
+
+# Directorio donde se guardarán los archivos
+upload_dir = "uploads"
+
+# Crear el directorio si no existe
+if not os.path.exists(upload_dir):
+    os.makedirs(upload_dir, mode=0o755)  # Permisos 755 (rwxr-xr-x)
 
 # Configuración de la API de Gemini
 genai.configure(api_key="AIzaSyDOMI3iuGgkiBIxY-prmD9O9Z1ED2A7jOA")
